@@ -124,8 +124,8 @@ echo -e "\n\033[1;36mFix checkuser\033[1;37mAGUARDE..."
 sleep 0.5
 clear
 mkdir /etc/rec > /dev/null 2>&1
-echo -e 'By: @LOCKED_SSH' > /etc/rec/licence
-echo -e 'By: @LOCKED_SSH' > /usr/lib/licence
+echo -e 'By: @KIRITO_SSH' > /etc/rec/licence
+echo -e 'By: @KIRITO_SSH' > /usr/lib/licence
 clear
 echo ""
 echo -e "\033[1;31m \033[1;37mAtiver o checkuser: \033[1;32m \033[0m"
@@ -150,7 +150,7 @@ echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "; read
 case "$x" in 
 	1 | 01)
    clear
-	gldutra
+	gltunnel
 	;;
 	2 | 02)
 	clear
