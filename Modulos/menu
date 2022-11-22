@@ -105,6 +105,17 @@ sleep 4s
 pweb
 }
 
+firewall () {
+clear
+echo -e "\033[1;37mINSTALANDO FIREWALL E ABRINDO PORTAS AZURE/AWS/ORACLE\033[0m"
+sleep 5s
+sudo apt-get update && sudo apt install firewalld && sudo firewall-cmd --zone=public --permanent --add-port=80/tcp && sudo firewall-cmd --zone=public --permanent --add-port=443/tcp && sudo firewall-cmd --zone=public --permanent --add-port=8080/tcp && sudo firewall-cmd --zone=public --permanent --add-port=7300/udp && sudo firewall-cmd --zone=public --permanent --add-port=5454/tcp && sudo firewall-cmd --zone=public --permanent --add-port=8181/tcp && sudo firewall-cmd --zone=public --permanent --add-port=5000/tcp && sudo firewall-cmd --reload && sudo firewall-cmd --zone=public --list-ports && 
+clear &&
+echo -e "\033[1;32mSUSSESO\033[0m" &&
+echo -e "\033[1;37mPORTAS 80, 443, 8080, 8181, 5000, 5454, 7300 ABERTAS \033[0m"
+sleep 5s
+}
+
 fixchk (){
 echo "America/Sao_Paulo" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime > /dev/null 2>&1
@@ -135,10 +146,10 @@ clear
 echo -e "\033[0;34m╭━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╮\033[0m"
 echo -e "\033[0;34m┃\E[44;1;37m                CHECKUSERS               \E[0m\033[0;34m┃"
 echo -e "\033[0;34m╰━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╯\033[0m"
-echo -e "\033[1;31m  [\033[1;36m 01 \033[1;31m] \033[1;37m• \033[1;33mGl Tunnel 
-\033[1;31m  [\033[1;36m 02 \033[1;31m] \033[1;37m• \033[1;33mCheckUser Conecta4G
-\033[1;31m  [\033[1;36m 03 \033[1;31m] \033[1;37m• \033[1;33mRecursos CheckUser 
-\033[1;31m  [\033[1;36m 00 \033[1;31m] \033[1;37m• \033[1;33mMenu"
+echo -e "\033[1;31m  [\033[1;36m 01 \033[1;31m] \033[1;37m• \033[1;33mGL TUNNEL 
+\033[1;31m  [\033[1;36m 02 \033[1;31m] \033[1;37m• \033[1;33mCHECKUSER CONECTA 4G
+\033[1;31m  [\033[1;36m 03 \033[1;31m] \033[1;37m• \033[1;33mLIBERAR CHECKUSER 
+\033[1;31m  [\033[1;36m 00 \033[1;31m] \033[1;37m• \033[1;33mMENU"
 echo ""
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "; read x
 case "$x" in 
@@ -175,6 +186,7 @@ echo -e "\033[0;34m╰━━━━━━━━━━━━━━━━━━━�
 echo -e "\033[1;31m  [\033[1;36m 01 \033[1;31m] \033[1;37m• \033[1;33mINSTALAR PAINEL WEB"
 echo -e "\033[1;31m  [\033[1;36m 02 \033[1;31m] \033[1;37m• \033[1;33mSINCRONIZAR PAINEL WEB"
 echo -e "\033[1;31m  [\033[1;36m 03 \033[1;31m] \033[1;37m• \033[1;33mACESSAR PAINEL WEB"
+echo -e "\033[1;31m  [\033[1;36m 04 \033[1;31m] \033[1;37m• \033[1;33mFIREWALL AWS/AZURE/ORACLE"
 echo -e "\033[1;31m  [\033[1;36m 00 \033[1;31m] \033[1;37m• \033[1;33mMENU"
 echo ""
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "; read x
@@ -187,9 +199,13 @@ case "$x" in
     clear
 	sincpweb
     ;;
-	3 | 33)
+	3 | 3)
     clear
 	pweb
+    ;;
+	4 | 4)
+    clear
+	firewall
 	;;
 	99 | 99)
    clear
@@ -315,7 +331,7 @@ echo -e "\033[0;34m┃\033[1;31mOS: \033[1;37m$_system    \033[1;31mTotal:\033[1
 echo -e "\033[0;34m┃\033[1;31mHora: \033[1;37m$_hora        \033[1;31mEm uso: \033[1;37m$_usor     \033[1;31mEm uso: \033[1;37m$_usop\033[0m    \033[0;34m┃"
 echo -e "\033[0;34m┠━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┨\033[0m"
 [[ ! -e /tmp/att ]]  && {
-    echo -e "\033[0;34m┃\033[1;32mOnlines:\033[1;37m $_onlin        \033[1;31mExpirados: \033[1;37m$_userexp       \033[1;37mTotal: \033[1;37m$_tuser\033[0m       \033[0;34m┃"
+    echo -e "\033[0;34m┃\033[1;32mONLINES:\033[1;37m $_onlin        \033[1;31mEXPIRADOS: \033[1;37m$_userexp       \033[1;37mTOTAL: \033[1;37m$_tuser\033[0m       \033[0;34m┃"
     var01='\033[1;37m•'
 } || {
     echo -e "\033[0;34m┃  \033[1;37m[\033[1;31m!\033[1;37m]  \033[1;32mEXISTE UMA ATUALIZACAO DISPONIVEL  \033[1;37m[\033[1;31m!\033[1;37m]\033[0m      \033[0;34m┃"
