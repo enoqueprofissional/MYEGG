@@ -106,9 +106,6 @@ pweb
 }
 
 firewall () {
-clear
-echo -e "\033[1;37mAQUI VOCÊ PODE ABRIR AS PORTA NO FIREWALL PARA SERVIDORES AWS, AZURE E ORACLE\033[0m"
-sleep 4s
 firewall
 }
 
