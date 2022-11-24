@@ -70,7 +70,7 @@ fun_atts () {
 
 echo -e "                           \033[1;31mBy niltonjuniornzx\033[1;36m"
 
-echo -e "   SSHPLUSnzx" | figlet
+echo -e "   SSHPLUS" | figlet
 
 echo " "
 
@@ -110,7 +110,7 @@ vrs2=$(sed -n '1 p' /tmp/att | sed -e 's/[^0-9]//ig')
 
   echo -e "  \033[1;36mEXISTE UMA NOVA ATUALIZACAO DISPONIVEL!\033[1;33m\n"
 
-  echo -e "  \033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37mEDIT:@Niltonjuniornzx\n"
+  echo -e "  \033[1;33mMAIS INFORMACOES \033[1;31m(\033[1;36mTELEGRAM\033[1;31m): \033[1;37mEDIT:@LOCKED_SSH\n"
 
   echo -e "  \033[1;32mDETALHES DA ATUALIZACAO:\033[0m\n"
 
