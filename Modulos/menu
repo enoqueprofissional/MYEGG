@@ -116,8 +116,6 @@ echo -e "\033[1;37mPORTAS 80, 443, 8080, 8181, 5000, 5454, 7300 ABERTAS \033[0m"
 sleep 5s
 }
 
-}
-
 teste () {
 #!/bin/bash
 IP=$(cat /etc/IP)
