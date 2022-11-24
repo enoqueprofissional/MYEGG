@@ -74,4 +74,4 @@ echo -e "\033[1;32mValidade:\033[1;37m $u_temp Minutos"
 echo ""
 echo -e "\033[1;33mApos o tempo definido o usuario"
 echo -e "\033[1;32m$nome \033[1;33msera desconectado e deletado.\033[0m"
-exit
+menu
